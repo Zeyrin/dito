@@ -1,6 +1,6 @@
 # Maquette de refonte hellodito.com
 
-Prototype statique (un seul fichier `index.html`) pour montrer à quoi pourrait ressembler la refonte. Ouvrir le fichier dans un navigateur. Trois vues : `#accueil`, `#grand-format`, `#devis`. Le formulaire de devis ne fait rien partir.
+Prototype statique (v2, basé sur le contenu réel du site actuel : équipe, café, catalogues, métiers) (un seul fichier `index.html`) pour montrer à quoi pourrait ressembler la refonte. Ouvrir le fichier dans un navigateur. Trois vues : `#accueil`, `#grand-format`, `#devis`. Le formulaire de devis ne fait rien partir.
 
 ## Avant / après côté SEO
 
@@ -14,6 +14,12 @@ Prototype statique (un seul fichier `index.html`) pour montrer à quoi pourrait 
 | Langues | Bouton `?changeLang=en` | URL `/en/` avec hreflang |
 | Conversion | Lien « Devis » vers une page contact | Formulaire de devis guidé, CTA sur chaque page |
 | URL | `index.php?page=6` | `/grand-format/` (prévu pour le vrai site) |
+
+## Notes v2
+
+- Les photos et le logo sont chargés depuis hellodito.com/imgz/ (même fichiers que le site actuel). Sans connexion, un aplat coloré les remplace.
+- Horaires : le site actuel affiche 17h sur une page et 18h sur une autre. La maquette utilise 18h, à confirmer.
+- Rôle de Chantal (café) et de Denis (imprimerie) déduits du site actuel, à confirmer.
 
 ## Reste à faire pour la vraie version
 
