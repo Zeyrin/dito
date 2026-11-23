@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imprimerie à Monaco | Hello Dito, Fontvieille</title>
+<meta name="description" content="Imprimerie à Monaco depuis 30 ans : cartes de visite, flyers, brochures, grand format, roll-up, objets publicitaires et création graphique. Devis rapide, atelier à Fontvieille, certifié Imprim'Vert.">
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="fr" href="https://hellodito.com/">
+<link rel="alternate" hreflang="en" href="https://hellodito.com/en/">
+<meta property="og:title" content="Hello Dito, imprimerie à Monaco">
+<meta property="og:description" content="Impression, grand format, objets publicitaires et création graphique à Fontvieille.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hello Dito",
+  "description": "Imprimerie à Monaco : impression, grand format, objets publicitaires, création graphique.",
+  "telephone": "+377 93 10 11 60",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 avenue de Fontvieille",
+    "postalCode": "98000",
+    "addressLocality": "Monaco",
+    "addressCountry": "MC"
+  },
+  "url": "https://hellodito.com/",
+  "sameAs": ["https://www.instagram.com/dito_monaco/"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an atelier's print sheet. Content sits inside crop-marked "sheets", CMYK used as the only accents, specs in mono like a job ticket. */
+:root{
+  --paper:#F6F7F8;
+  --sheet:#FFFFFF;
+  --ink:#16181D;
+  --ink-2:#4A4F5A;
+  --rule:#DADDE2;
+  --c:#009FD4;
+  --m:#E0247A;
+  --y:#F7C600;
+  --k:#16181D;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
+h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.lede{font-size:1.15rem;color:var(--ink-2);max-width:60ch}
+
+/* demo banner */
+.demo{background:var(--ink);color:#fff}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:8px}
+.demo .mono{font-size:.72rem}
+.demo nav{display:flex;gap:6px;flex-wrap:wrap}
+.demo nav a{font-family:var(--mono);font-size:.72rem;text-decoration:none;padding:4px 10px;border:1px solid #ffffff44;border-radius:999px}
+.demo nav a[aria-current="page"]{background:#fff;color:var(--ink)}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex;align-items:center;gap:24px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:-.03em}
+.dots{display:inline-grid;grid-template-columns:repeat(2,9px);gap:3px}
+.dots i{width:9px;height:9px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--c)}.dots i:nth-child(2){background:var(--m)}.dots i:nth-child(3){background:var(--y)}.dots i:nth-child(4){background:var(--k)}
+header nav.main{display:flex;gap:22px;margin-left:auto}
+header nav.main a{text-decoration:none;font-weight:500;font-size:.95rem}
+header nav.main a:hover{color:var(--m)}
+.lang{font-family:var(--mono);font-size:.75rem;border:1px solid var(--rule);border-radius:999px;padding:4px 8px;background:var(--sheet)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 1rem var(--body);text-decoration:none;border:0;cursor:pointer;padding:14px 22px;border-radius:6px;background:var(--ink);color:#fff;transition:transform .15s, background .15s}
+.btn:hover{background:var(--m);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.small{padding:10px 16px;font-size:.92rem}
+.burger{display:none}
+@media (max-width:920px){header nav.main{display:none}.burger{display:inline-flex;margin-left:auto}header .btn.small.cta{display:none}}
+.mobile-nav{border-top:1px solid var(--rule);background:var(--sheet)}
+.mobile-nav .wrap{display:grid;gap:4px;padding-block:12px}
+.mobile-nav a{padding:10px 0;text-decoration:none;font-weight:600;border-bottom:1px solid var(--rule)}
+
+/* crop-marked sheet */
+.sheet{position:relative;background:var(--sheet);padding:clamp(24px,4vw,48px)}
+.sheet::before,.sheet::after{content:"";position:absolute;width:18px;height:18px;pointer-events:none}
+.sheet::before{top:-10px;left:-10px;border-right:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2)}
+.sheet::after{bottom:-10px;right:-10px;border-left:1px solid var(--ink-2);border-top:1px solid var(--ink-2)}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(32px,5vw,64px)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-grid > *{min-width:0}
+.hero h1 .hl{background:linear-gradient(transparent 62%, color-mix(in srgb,var(--y) 80%,transparent) 62%)}
+.hero .lede{margin-top:22px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center}
+.tel{font-family:var(--mono);font-size:.95rem;user-select:all}
+.badges{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:34px;color:var(--ink-2)}
+.badges span{display:inline-flex;gap:8px;align-items:center}
+.badges span::before{content:"";width:7px;height:7px;background:var(--c);border-radius:50%}
+.badges span:nth-child(2)::before{background:var(--m)}
+.badges span:nth-child(3)::before{background:var(--y)}
+
+/* stacked prints illustration */
+.stack{position:relative;aspect-ratio:4/5;max-width:100%;width:100%}
+.card{position:absolute;border-radius:4px;box-shadow:0 18px 40px -18px #16181d55, 0 2px 6px #16181d22;display:flex;flex-direction:column;justify-content:space-between;padding:18px;overflow:hidden}
+.card.poster{inset:4% 14% 14% 6%;background:var(--m);color:#fff;transform:rotate(-4deg);justify-content:flex-start;gap:14px}
+.card.poster b{font-family:var(--display);font-size:clamp(2rem,4.6vw,3.4rem);line-height:.92;letter-spacing:-.03em}
+.card.flyer{inset:30% 2% 4% 40%;background:var(--sheet);transform:rotate(5deg)}
+.card.flyer b{font-family:var(--display);font-size:1.4rem;line-height:1}
+.card.flyer .bar{height:46%;background:linear-gradient(135deg,var(--c),var(--y));border-radius:2px}
+.card.bc{left:0;bottom:2%;width:46%;aspect-ratio:85/55;height:auto;background:var(--ink);color:#fff;transform:rotate(-9deg);padding:12px}
+.card.bc b{font-family:var(--display);font-size:1rem}
+.card .mono{font-size:.62rem}
+.swatch{position:absolute;right:0;top:0;display:grid;grid-template-columns:repeat(4,18px);gap:0;border:1px solid var(--rule);background:var(--sheet);padding:4px}
+.swatch i{height:18px;display:block}
+
+/* ticker */
+.ticker{border-block:1px solid var(--rule);background:var(--sheet);overflow:hidden}
+.ticker .row{display:flex;gap:40px;padding-block:14px;white-space:nowrap;animation:tick 40s linear infinite;width:max-content}
+.ticker span{font-family:var(--display);font-weight:700;font-size:1.25rem}
+.ticker span::after{content:"✳";margin-left:40px;color:var(--m)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section.block{padding-block:clamp(56px,8vw,104px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.head .mono{color:var(--m);display:block;margin-bottom:12px}
+.head p.lede{max-width:46ch}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:14px;text-decoration:none;transition:border-color .2s, transform .2s;min-width:0}
+.svc:hover{border-color:var(--ink);transform:translateY(-2px)}
+.svc .chip{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--mono);font-weight:500;font-size:.8rem}
+.svc p{color:var(--ink-2)}
+.svc ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-size:.8rem;border:1px solid var(--rule);border-radius:999px;padding:3px 10px}
+.svc .more{margin-top:auto;font-weight:600;font-size:.92rem}
+.svc.feature{grid-column:span 2;background:var(--ink);color:#fff;border-color:var(--ink)}
+.svc.feature p{color:#C9CDD5}
+.svc.feature li{border-color:#ffffff33}
+@media (max-width:900px){.services{grid-template-columns:1fr 1fr}.svc.feature{grid-column:span 2}}
+@media (max-width:600px){.services{grid-template-columns:1fr}.svc.feature{grid-column:auto}.hero-grid{grid-template-columns:1fr}.stack{max-width:360px;margin-inline:auto}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s}
+.step{padding:28px 28px 28px 0;border-top:2px solid var(--ink);min-width:0}
+.step + .step{padding-left:28px;border-left:1px solid var(--rule)}
+.step .mono{color:var(--ink-2)}
+.step h3{margin:10px 0 8px}
+.step p{color:var(--ink-2)}
+@media (max-width:760px){.steps{grid-template-columns:1fr}.step + .step{padding-left:0;border-left:0}}
+
+/* green */
+.green{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.green > *{min-width:0}
+.green ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.green li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.green li::before{content:"";width:14px;height:14px;margin-top:5px;border:2px solid var(--c);border-radius:50%}
+@media (max-width:760px){.green{grid-template-columns:1fr}}
+
+/* specs box */
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--sheet)}
+.specs div{padding:18px;border-right:1px solid var(--rule);min-width:0}
+.specs div:last-child{border-right:0}
+.specs b{display:block;font-family:var(--display);font-size:1.6rem;letter-spacing:-.02em}
+.specs span{color:var(--ink-2);font-size:.9rem}
+@media (max-width:760px){.specs{grid-template-columns:1fr 1fr}.specs div:nth-child(2){border-right:0}.specs div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+
+/* faq */
+.faq{display:grid;gap:0;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--rule);padding-block:6px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding-block:14px;font-weight:600;font-size:1.08rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:1.3rem;line-height:1;color:var(--m)}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--ink-2);padding-bottom:16px;max-width:70ch}
+
+/* cta band */
+.band{background:var(--m);color:#fff}
+.band .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding-block:clamp(40px,6vw,72px)}
+.band h2{max-width:18ch}
+.band .btn{background:#fff;color:var(--ink)}
+.band .btn:hover{background:var(--ink);color:#fff}
+
+/* footer */
+footer{background:var(--ink);color:#C9CDD5}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-block:56px 32px}
+footer .wrap > *{min-width:0}
+footer h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 0 12px;font-weight:500}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer .logo{color:#fff;margin-bottom:12px}
+footer .legal{grid-column:1/-1;border-top:1px solid #ffffff22;padding-top:20px;font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr 1fr}}
+
+/* inner pages */
+.crumbs{font-family:var(--mono);font-size:.75rem;color:var(--ink-2);display:flex;gap:8px;flex-wrap:wrap;padding-top:28px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--m)}
+.page-hero{padding-block:28px 48px}
+.page-hero .lede{margin-top:18px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.95rem}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-weight:500;background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--display);font-size:1.05rem}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.two > *{min-width:0}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.prose{display:grid;gap:16px;max-width:66ch}
+.prose h2{font-size:1.8rem;margin-top:12px}
+.prose p{color:var(--ink-2)}
+.ticket{background:var(--sheet);border:1px dashed var(--ink-2);border-radius:4px;padding:22px;display:grid;gap:10px;font-family:var(--mono);font-size:.85rem}
+.ticket div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--rule);padding-bottom:8px}
+.ticket div:last-child{border-bottom:0;padding-bottom:0}
+.ticket span{color:var(--ink-2)}
+
+/* form */
+form.quote{display:grid;gap:22px}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:14px}
+legend{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--m);margin-bottom:6px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fields > *{min-width:0}
+@media (max-width:600px){.fields{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+label small{font-weight:400;color:var(--ink-2)}
+input,select,textarea{font:inherit;font-weight:400;padding:12px 14px;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
+textarea{min-height:110px;resize:vertical}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choices label{display:inline-flex;align-items:center;gap:8px;font-weight:500;border:1.5px solid var(--rule);border-radius:999px;padding:8px 14px;cursor:pointer;background:var(--sheet)}
+.choices input{width:auto;accent-color:var(--m)}
+.choices label:has(input:checked){border-color:var(--ink);background:var(--ink);color:#fff}
+.err{color:#B0154F;font-size:.85rem;font-weight:500}
+.done{background:var(--sheet);border:2px solid var(--ink);border-radius:6px;padding:28px;display:grid;gap:12px}
+.done .mono{color:var(--m)}
+.aside{display:grid;gap:18px;position:sticky;top:96px}
+</style>
+</head>
+<body>
+
+<div class="demo">
+  <div class="wrap">
+    <span class="mono">Maquette de refonte · proposition non officielle · pas en ligne</span>
+    <nav aria-label="Pages de la maquette">
+      <a href="#accueil" data-view="accueil">Accueil</a>
+      <a href="#grand-format" data-view="grand-format">Page service</a>
+      <a href="#devis" data-view="devis">Devis</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#accueil" aria-label="Hello Dito, accueil"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>hello dito</a>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="#accueil" data-goto="services">Impression</a>
+      <a href="#grand-format">Grand format</a>
+      <a href="#accueil" data-goto="services">Objets pub</a>
+      <a href="#accueil" data-goto="services">Création</a>
+      <a href="#accueil" data-goto="faq">FAQ</a>
+    </nav>
+    <span class="lang" title="Version anglaise prévue sur /en/">FR · EN</span>
+    <a class="btn small cta" href="#devis">Demander un devis</a>
+    <button class="btn small ghost burger" id="burger" aria-expanded="false" aria-controls="mnav">Menu</button>
+  </div>
+  <div class="mobile-nav" id="mnav" hidden>
+    <div class="wrap">
+      <a href="#accueil" data-goto="services">Impression</a>
+      <a href="#grand-format">Grand format</a>
+      <a href="#accueil" data-goto="services">Objets pub</a>
+      <a href="#accueil" data-goto="faq">FAQ</a>
+      <a href="#devis">Demander un devis</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ ACCUEIL ============ -->
+<div data-page="accueil">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="mono" style="color:var(--m);margin-bottom:18px">Imprimerie · Fontvieille, Monaco</p>
+        <h1>Votre imprimerie à Monaco, <span class="hl">depuis 30 ans.</span></h1>
+        <p class="lede">Cartes de visite, flyers, brochures, roll-up, bâches et objets publicitaires. On vous conseille, on valide le BAT avec vous, et on imprime à deux pas du port de Fontvieille.</p>
+        <div class="actions">
+          <a class="btn" href="#devis">Demander un devis gratuit →</a>
+          <span class="tel">+377 93 10 11 60</span>
+        </div>
+        <div class="badges mono">
+          <span>Certifié Imprim'Vert</span>
+          <span>Création graphique sur place</span>
+          <span>Français · English</span>
+        </div>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="swatch"><i style="background:var(--c)"></i><i style="background:var(--m)"></i><i style="background:var(--y)"></i><i style="background:var(--k)"></i></div>
+        <div class="card poster"><span class="mono">Affiche · A2 · 170 g</span><b>Monaco<br>Yacht<br>Week.</b></div>
+        <div class="card flyer"><div class="bar"></div><b>Flyer A5<br>recto verso</b><span class="mono">350 g · pelliculé mat</span></div>
+        <div class="card bc"><b>Votre nom</b><span class="mono">85 × 55 mm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="row">
+    <span>Cartes de visite</span><span>Flyers</span><span>Brochures</span><span>Roll-up</span><span>Bâches</span><span>Stickers</span><span>Tampons</span><span>Cartes de vœux</span><span>Objets publicitaires</span>
+    <span>Cartes de visite</span><span>Flyers</span><span>Brochures</span><span>Roll-up</span><span>Bâches</span><span>Stickers</span><span>Tampons</span><span>Cartes de vœux</span><span>Objets publicitaires</span>
+  </div></div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="mono">Nos services</span><h2>Tout ce qui s'imprime, au même endroit.</h2></div>
+        <p class="lede">Chaque service a sa propre page, avec ses formats, ses papiers et ses délais. Google peut enfin comprendre ce que vous faites.</p>
+      </div>
+      <div class="services">
+        <a class="svc feature" href="#grand-format">
+          <span class="chip" style="background:var(--m)">GF</span>
+          <h3>Impression grand format</h3>
+          <p>Roll-up, bâches, affiches, kakémonos, adhésifs vitrine et stands pour vos salons, boutiques et événements en Principauté.</p>
+          <ul><li>Roll-up</li><li>Bâches</li><li>Affiches</li><li>Stickers</li><li>Stands</li></ul>
+          <span class="more">Voir la page Grand format →</span>
+        </a>
+        <a class="svc" href="#accueil">
+          <span class="chip" style="background:var(--c)">PR</span>
+          <h3>Impression papier</h3>
+          <p>Les supports de tous les jours pour votre entreprise.</p>
+          <ul><li>Cartes de visite</li><li>Flyers</li><li>Brochures</li><li>Tampons</li></ul>
+          <span class="more">Découvrir →</span>
+        </a>
+        <a class="svc" href="#accueil">
+          <span class="chip" style="background:var(--y);color:var(--ink)">OP</span>
+          <h3>Objets publicitaires</h3>
+          <p>Votre logo sur des objets que vos clients gardent.</p>
+          <ul><li>Textile</li><li>Goodies</li><li>Cadeaux d'affaires</li></ul>
+          <span class="more">Découvrir →</span>
+        </a>
+        <a class="svc" href="#accueil">
+          <span class="chip" style="background:var(--ink)">CR</span>
+          <h3>Création graphique</h3>
+          <p>Pas encore de fichier ? On crée le visuel avec vous.</p>
+          <ul><li>Logo</li><li>Mise en page</li><li>Cartes de vœux</li></ul>
+          <span class="more">Découvrir →</span>
+        </a>
+        <a class="svc" href="#accueil">
+          <span class="chip" style="background:var(--m)">IC</span>
+          <h3>Internet café</h3>
+          <p>Un café pendant qu'on imprime, ou un poste pour envoyer vos fichiers.</p>
+          <ul><li>Postes en libre accès</li><li>Impression express</li></ul>
+          <span class="more">Découvrir →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><span class="mono">Comment ça marche</span><h2>Du fichier à l'impression en trois étapes.</h2></div></div>
+      <div class="steps">
+        <div class="step"><span class="mono">Étape 1</span><h3>Vous demandez un devis</h3><p>En ligne, par téléphone ou à l'atelier. Indiquez le produit, la quantité et la date souhaitée.</p></div>
+        <div class="step"><span class="mono">Étape 2</span><h3>On valide le BAT ensemble</h3><p>Vous recevez un bon à tirer. Rien ne part à l'impression sans votre accord.</p></div>
+        <div class="step"><span class="mono">Étape 3</span><h3>Vous récupérez votre commande</h3><p>À l'atelier de Fontvieille, ou livrée selon ce qui est prévu dans le devis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="sheet green">
+        <div>
+          <span class="mono" style="color:var(--c)">Engagement</span>
+          <h2 style="margin-top:12px">Une imprimerie certifiée Imprim'Vert.</h2>
+          <p class="lede" style="margin-top:16px">Le label Imprim'Vert distingue les imprimeurs qui réduisent l'impact de leur activité sur l'environnement.</p>
+        </div>
+        <ul>
+          <li>Les déchets dangereux sont collectés et traités par des filières agréées.</li>
+          <li>Les produits dangereux sont stockés de façon sécurisée.</li>
+          <li>Pas de produits étiquetés toxiques dans l'atelier.</li>
+          <li>Suivi des consommations d'énergie.</li>
+          <li>Conseil aux clients sur les papiers et finitions plus responsables.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq" style="padding-top:0">
+    <div class="wrap two">
+      <div>
+        <span class="mono" style="color:var(--m);display:block;margin-bottom:12px">Questions fréquentes</span>
+        <h2>Avant de commander.</h2>
+        <p class="lede" style="margin-top:16px">Ces réponses apparaissent aussi dans Google sous forme de questions, grâce aux données structurées.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>Quel fichier dois-je vous envoyer ?</summary><p>Idéalement un PDF haute définition, en CMJN, à 300 dpi, avec 3 mm de fonds perdus. Si vous n'avez qu'un Word ou une image, envoyez-le quand même : on vous dira ce qu'il est possible de faire.</p></details>
+        <details><summary>Je n'ai pas de visuel. Pouvez-vous le créer ?</summary><p>Oui. Notre service de création graphique prépare votre logo, votre flyer ou votre carte de visite, puis vous envoie un BAT à valider.</p></details>
+        <details><summary>Quels sont vos délais ?</summary><p>Ils dépendent du produit et de la quantité. Le délai exact est indiqué dans votre devis, et on vous prévient si une date est serrée.</p></details>
+        <details><summary>Puis-je venir chercher ma commande ?</summary><p>Oui, à l'atelier au 20 avenue de Fontvieille, 98000 Monaco.</p></details>
+        <details><summary>Do you speak English?</summary><p>Yes. We regularly work with international companies based in Monaco. The whole site is available in English.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GRAND FORMAT ============ -->
+<div data-page="grand-format" hidden>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="#accueil">Accueil</a><span>/</span><span>Services</span><span>/</span><span>Grand format</span></nav>
+    <section class="page-hero two">
+      <div>
+        <p class="mono" style="color:var(--m);margin-bottom:16px">Service · Grand format</p>
+        <h1 style="font-size:clamp(2.3rem,5.4vw,4.2rem)">Impression grand format à Monaco</h1>
+        <p class="lede">Roll-up pour un salon au Grimaldi Forum, bâche pour un chantier, adhésif pour une vitrine du Carré d'Or : on imprime vos supports grand format à Fontvieille et on vous aide à choisir la bonne matière.</p>
+        <div class="actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center">
+          <a class="btn" href="#devis" data-product="Roll-up">Devis grand format →</a>
+          <span class="tel">+377 93 10 11 60</span>
+        </div>
+      </div>
+      <div class="ticket" aria-label="Exemple de fiche technique">
+        <p style="font-weight:500;color:var(--ink)">FICHE TECHNIQUE · ROLL-UP</p>
+        <div><span>Format</span><b>85 × 200 cm</b></div>
+        <div><span>Support</span><b>Bâche PVC 510 g/m²</b></div>
+        <div><span>Impression</span><b>Quadri CMJN</b></div>
+        <div><span>Structure</span><b>Alu + sac de transport</b></div>
+        <div><span>Fichier</span><b>PDF 1:10, 150 dpi</b></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" style="padding-top:12px">
+    <div class="wrap">
+      <div class="head"><div><span class="mono">Nos supports</span><h2>Choisir le bon support.</h2></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Support</th><th>Idéal pour</th><th>Matières</th><th>Pose</th></tr></thead>
+          <tbody>
+            <tr><td><b>Roll-up</b></td><td>Salons, accueil, événements</td><td>Bâche PVC, toile anti-feu</td><td>Se déroule en 30 secondes</td></tr>
+            <tr><td><b>Bâche</b></td><td>Façades, chantiers, barrières</td><td>PVC 510 g, micro-perforée</td><td>Œillets, sandows</td></tr>
+            <tr><td><b>Affiche</b></td><td>Vitrines, affichage, événements</td><td>Papier 135 à 200 g, dos bleu</td><td>Cadre ou collage</td></tr>
+            <tr><td><b>Kakémono</b></td><td>Boutiques, halls, conférences</td><td>Toile, papier synthétique</td><td>Barres haut et bas</td></tr>
+            <tr><td><b>Adhésif vitrine</b></td><td>Devantures, horaires, déco</td><td>Vinyle, micro-perforé, dépoli</td><td>Pose possible sur demande</td></tr>
+            <tr><td><b>Stand</b></td><td>Salons professionnels</td><td>Tissu tendu, structure pliable</td><td>Montage sans outil</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="specs">
+        <div><b>30 ans</b><span>d'impression en Principauté</span></div>
+        <div><b>1 BAT</b><span>validé par vous avant chaque impression</span></div>
+        <div><b>FR · EN</b><span>accompagnement bilingue</span></div>
+        <div><b>Imprim'Vert</b><span>atelier certifié</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap two">
+      <div class="prose">
+        <h2>Préparer votre fichier grand format</h2>
+        <p>Pour un roll-up ou une bâche, un fichier à l'échelle 1:10 en 150 dpi suffit souvent : l'image est vue de loin. Gardez les textes importants à au moins 5 cm des bords et prévoyez une zone libre en bas du roll-up, cachée par le pied.</p>
+        <h2>Événements à Monaco</h2>
+        <p>Les entreprises de la Principauté commandent souvent leurs supports avant les grands rendez-vous de l'année : salons, congrès et événements nautiques. Anticipez votre demande et on bloque le créneau d'impression.</p>
+      </div>
+      <div class="sheet">
+        <h3>Pas de fichier prêt ?</h3>
+        <p style="color:var(--ink-2);margin:10px 0 18px">Notre studio de création prépare votre visuel aux bonnes dimensions.</p>
+        <a class="btn ghost" href="#devis" data-product="Création graphique">Ajouter la création au devis</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ DEVIS ============ -->
+<div data-page="devis" hidden>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="#accueil">Accueil</a><span>/</span><span>Demande de devis</span></nav>
+    <section class="page-hero">
+      <p class="mono" style="color:var(--m);margin-bottom:16px">Devis gratuit · réponse par email</p>
+      <h1 style="font-size:clamp(2.3rem,5.4vw,4.2rem)">Demander un devis d'impression</h1>
+      <p class="lede">Deux minutes pour décrire votre projet. On vous répond avec un prix, un délai et, si besoin, des conseils sur le papier ou la finition.</p>
+    </section>
+
+    <section class="two" style="padding-bottom:96px">
+      <div>
+        <form class="quote" id="quote" novalidate>
+          <fieldset>
+            <legend>1 · Votre projet</legend>
+            <label for="product">Produit
+              <select id="product" name="product">
+                <option>Cartes de visite</option><option>Flyers</option><option>Brochures</option>
+                <option>Roll-up</option><option>Bâche</option><option>Affiche</option><option>Adhésif vitrine</option>
+                <option>Objets publicitaires</option><option>Tampons</option><option>Création graphique</option><option>Autre</option>
+              </select>
+            </label>
+            <div class="fields">
+              <label for="qty">Quantité<input id="qty" name="qty" type="number" min="1" value="500" inputmode="numeric"></label>
+              <label for="date">Pour quand ?<input id="date" name="date" type="date"></label>
+            </div>
+            <div>
+              <p style="font-weight:600;font-size:.92rem;margin-bottom:8px">Votre fichier</p>
+              <div class="choices">
+                <label><input type="radio" name="file" id="file-ready" value="prêt" checked> Il est prêt</label>
+                <label><input type="radio" name="file" id="file-todo" value="à créer"> À créer par Hello Dito</label>
+                <label><input type="radio" name="file" id="file-unsure" value="je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+            <label for="upload">Joindre un fichier <small>PDF, AI, PNG ou JPG</small><input id="upload" name="upload" type="file"></label>
+          </fieldset>
+          <fieldset>
+            <legend>2 · Vos coordonnées</legend>
+            <div class="fields">
+              <label for="name">Nom<input id="name" name="name" autocomplete="name" value="Julie Martin"></label>
+              <label for="company">Société <small>(facultatif)</small><input id="company" name="company" autocomplete="organization" value="Exemple SAM"></label>
+              <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" value="julie@exemple.mc"></label>
+              <label for="phone">Téléphone<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+377 …"></label>
+            </div>
+            <label for="msg">Détails <small>(format, papier, finition…)</small><textarea id="msg" name="msg">Cartes de visite recto verso, 350 g pelliculé mat, pour toute l'équipe.</textarea></label>
+          </fieldset>
+          <p class="err" id="err" hidden></p>
+          <div><button class="btn" type="submit">Envoyer ma demande →</button></div>
+        </form>
+        <div class="done" id="done" hidden>
+          <span class="mono">Demande prête</span>
+          <h3 id="done-title">Merci !</h3>
+          <p style="color:var(--ink-2)">Sur le vrai site, l'atelier recevrait cette demande par email et vous répondrait avec un devis. Ici c'est une maquette : rien n'a été envoyé.</p>
+          <div><button class="btn ghost small" type="button" id="again">Modifier la demande</button></div>
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="ticket">
+          <p style="font-weight:500;color:var(--ink)">L'ATELIER</p>
+          <div><span>Adresse</span><b>20 av. de Fontvieille</b></div>
+          <div><span>Ville</span><b>98000 Monaco</b></div>
+          <div><span>Téléphone</span><b style="user-select:all">+377 93 10 11 60</b></div>
+          <div><span>Instagram</span><b>@dito_monaco</b></div>
+          <div><span>Horaires</span><b>à compléter</b></div>
+        </div>
+        <div class="sheet">
+          <h3>Vous préférez parler à quelqu'un ?</h3>
+          <p style="color:var(--ink-2);margin-top:8px">Passez à l'atelier avec votre fichier sur clé USB, ou appelez-nous. On vous conseille sur place.</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+</div>
+</main>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Un projet à imprimer cette semaine ?</h2>
+    <a class="btn" href="#devis">Demander un devis →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#accueil"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>hello dito</a>
+      <p>Imprimerie, création graphique et objets publicitaires à Monaco depuis 30 ans.</p>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="#accueil">Impression papier</a></li><li><a href="#grand-format">Grand format</a></li><li><a href="#accueil">Objets publicitaires</a></li><li><a href="#accueil">Création graphique</a></li><li><a href="#accueil">Tampons</a></li></ul></div>
+    <div><h4>Atelier</h4><ul><li>20 avenue de Fontvieille</li><li>98000 Monaco</li><li style="user-select:all">+377 93 10 11 60</li></ul></div>
+    <div><h4>Suivre</h4><ul><li><a href="https://www.instagram.com/dito_monaco/" rel="noopener">Instagram</a></li><li>Facebook</li><li><a href="#devis">Devis en ligne</a></li></ul></div>
+    <div class="legal"><span>© Hello Dito · Maquette de refonte</span><span>Mentions légales · Confidentialité</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var META = {
+    "accueil": ["Imprimerie à Monaco | Hello Dito, Fontvieille", "Imprimerie à Monaco depuis 30 ans : cartes de visite, flyers, brochures, grand format, roll-up, objets publicitaires et création graphique."],
+    "grand-format": ["Impression grand format à Monaco : roll-up, bâches, affiches | Hello Dito", "Roll-up, bâches, affiches, kakémonos et adhésifs vitrine imprimés à Fontvieille. Conseils matière et devis gratuit."],
+    "devis": ["Devis d'impression gratuit à Monaco | Hello Dito", "Demandez un devis d'impression en deux minutes : cartes de visite, flyers, grand format, objets publicitaires."]
+  };
+  var pages = document.querySelectorAll("[data-page]");
+  var desc = document.querySelector('meta[name="description"]');
+  function show(){
+    var v = (location.hash || "#accueil").slice(1);
+    if(!META[v]) v = "accueil";
+    pages.forEach(function(p){ p.hidden = p.getAttribute("data-page") !== v; });
+    document.querySelectorAll(".demo nav a").forEach(function(a){
+      if(a.getAttribute("data-view") === v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    document.title = META[v][0]; desc.setAttribute("content", META[v][1]);
+    var target = pendingGoto ? document.getElementById(pendingGoto) : null;
+    pendingGoto = null;
+    if(target) target.scrollIntoView(); else window.scrollTo(0,0);
+    mnav.hidden = true; burger.setAttribute("aria-expanded","false");
+  }
+  var pendingGoto = null;
+  var mnav = document.getElementById("mnav"), burger = document.getElementById("burger");
+  burger.addEventListener("click", function(){ mnav.hidden = !mnav.hidden; burger.setAttribute("aria-expanded", String(!mnav.hidden)); });
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a[href^='#']"); if(!a) return;
+    var g = a.getAttribute("data-goto"), prod = a.getAttribute("data-product");
+    if(prod){ var s = document.getElementById("product"); s.value = prod; }
+    if(g){ pendingGoto = g; if(location.hash === a.getAttribute("href") || (!location.hash && a.getAttribute("href")==="#accueil")){ e.preventDefault(); show(); } }
+  });
+  window.addEventListener("hashchange", show);
+  show();
+
+  var form = document.getElementById("quote"), done = document.getElementById("done"), err = document.getElementById("err");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.elements.name.value.trim(), email = form.elements.email.value.trim();
+    if(!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      err.textContent = "Indiquez votre nom et une adresse email valide pour qu'on puisse vous répondre.";
+      err.hidden = false; return;
+    }
+    err.hidden = true;
+    document.getElementById("done-title").textContent = "Merci " + name.split(" ")[0] + ", votre demande de " + form.elements.product.value.toLowerCase() + " est prête.";
+    form.hidden = true; done.hidden = false;
+  });
+  document.getElementById("again").addEventListener("click", function(){ done.hidden = true; form.hidden = false; });
+})();
+</script>
+</body>
+</html>
