@@ -17,7 +17,7 @@ Prototype statique (v2, basé sur le contenu réel du site actuel : équipe, caf
 
 ## Notes v2
 
-- Les photos et le logo sont chargés depuis hellodito.com/imgz/ (même fichiers que le site actuel). Sans connexion, un aplat coloré les remplace.
+- Photos d illustration Unsplash (licence Unsplash, usage commercial libre), chargées en ligne. Sans connexion, une illustration aux couleurs CMJN les remplace. À remplacer par de vraies photos de l atelier.
 - Horaires : le site actuel affiche 17h sur une page et 18h sur une autre. La maquette utilise 18h, à confirmer.
 - Rôle de Chantal (café) et de Denis (imprimerie) déduits du site actuel, à confirmer.
 

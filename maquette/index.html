@@ -327,7 +327,15 @@ textarea{min-height:110px;resize:vertical}
 .route{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font-size:.92rem}
 .route .av{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#fff}
 .note{font-size:.8rem;color:var(--ink-2)}
-.ph .cap{display:none}.ph.noimg .cap{display:block}
+.ph .cap{display:block;opacity:.85}
+.ph.noimg[data-k="press"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23E9ECF0%27/%3E%3Crect%20x%3D%2740%27%20y%3D%27120%27%20width%3D%27320%27%20height%3D%2770%27%20rx%3D%276%27%20fill%3D%27%2316181D%27/%3E%3Ccircle%20cx%3D%27110%27%20cy%3D%27120%27%20r%3D%2734%27%20fill%3D%27%23E0247A%27/%3E%3Ccircle%20cx%3D%27200%27%20cy%3D%27120%27%20r%3D%2734%27%20fill%3D%27%23009FD4%27/%3E%3Ccircle%20cx%3D%27290%27%20cy%3D%27120%27%20r%3D%2734%27%20fill%3D%27%23F7C600%27/%3E%3Crect%20x%3D%2770%27%20y%3D%2740%27%20width%3D%27260%27%20height%3D%2746%27%20fill%3D%27%23fff%27%20transform%3D%27rotate%28-4%20200%2063%29%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="banner"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23EEF1F4%27/%3E%3Crect%20x%3D%27150%27%20y%3D%2720%27%20width%3D%27100%27%20height%3D%27185%27%20fill%3D%27%23E0247A%27/%3E%3Crect%20x%3D%27165%27%20y%3D%2740%27%20width%3D%2770%27%20height%3D%2710%27%20fill%3D%27%23fff%27/%3E%3Crect%20x%3D%27165%27%20y%3D%2758%27%20width%3D%2750%27%20height%3D%278%27%20fill%3D%27%23fff%27/%3E%3Ccircle%20cx%3D%27200%27%20cy%3D%27130%27%20r%3D%2728%27%20fill%3D%27%23F7C600%27/%3E%3Crect%20x%3D%27140%27%20y%3D%27200%27%20width%3D%27120%27%20height%3D%2710%27%20rx%3D%273%27%20fill%3D%27%2316181D%27/%3E%3Crect%20x%3D%2740%27%20y%3D%2780%27%20width%3D%2770%27%20height%3D%27100%27%20fill%3D%27%23009FD4%27%20transform%3D%27rotate%28-6%2075%20130%29%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="cards"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23E4E7EB%27/%3E%3Crect%20x%3D%2790%27%20y%3D%2770%27%20width%3D%27170%27%20height%3D%27105%27%20rx%3D%276%27%20fill%3D%27%2316181D%27%20transform%3D%27rotate%28-8%20175%20122%29%27/%3E%3Crect%20x%3D%27150%27%20y%3D%2760%27%20width%3D%27170%27%20height%3D%27105%27%20rx%3D%276%27%20fill%3D%27%23fff%27%20transform%3D%27rotate%286%20235%20112%29%27/%3E%3Crect%20x%3D%27175%27%20y%3D%2785%27%20width%3D%2760%27%20height%3D%2710%27%20fill%3D%27%23E0247A%27%20transform%3D%27rotate%286%20235%20112%29%27/%3E%3Crect%20x%3D%27175%27%20y%3D%27105%27%20width%3D%27100%27%20height%3D%276%27%20fill%3D%27%23009FD4%27%20transform%3D%27rotate%286%20235%20112%29%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="design"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23ECEFF2%27/%3E%3Crect%20x%3D%2760%27%20y%3D%2740%27%20width%3D%27280%27%20height%3D%27160%27%20rx%3D%278%27%20fill%3D%27%23fff%27/%3E%3Ccircle%20cx%3D%27140%27%20cy%3D%27120%27%20r%3D%2745%27%20fill%3D%27%23009FD4%27%20opacity%3D%27.9%27/%3E%3Ccircle%20cx%3D%27185%27%20cy%3D%27120%27%20r%3D%2745%27%20fill%3D%27%23E0247A%27%20opacity%3D%27.85%27/%3E%3Ccircle%20cx%3D%27162%27%20cy%3D%2782%27%20r%3D%2745%27%20fill%3D%27%23F7C600%27%20opacity%3D%27.85%27/%3E%3Crect%20x%3D%27250%27%20y%3D%2770%27%20width%3D%2760%27%20height%3D%278%27%20fill%3D%27%2316181D%27/%3E%3Crect%20x%3D%27250%27%20y%3D%2788%27%20width%3D%2745%27%20height%3D%278%27%20fill%3D%27%2316181D%27%20opacity%3D%27.4%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="merch"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23EEF0F3%27/%3E%3Cpath%20d%3D%27M120%2070l30-20h40l30%2020-15%2025-15-8v88h-80v-88l-15%208z%27%20fill%3D%27%23009FD4%27/%3E%3Crect%20x%3D%27250%27%20y%3D%27100%27%20width%3D%2760%27%20height%3D%2780%27%20rx%3D%278%27%20fill%3D%27%23E0247A%27/%3E%3Crect%20x%3D%27310%27%20y%3D%27118%27%20width%3D%2716%27%20height%3D%2740%27%20rx%3D%278%27%20fill%3D%27none%27%20stroke%3D%27%23E0247A%27%20stroke-width%3D%278%27/%3E%3Crect%20x%3D%2760%27%20y%3D%27150%27%20width%3D%2750%27%20height%3D%2740%27%20rx%3D%274%27%20fill%3D%27%23F7C600%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="cafe"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%232B1D16%27/%3E%3Cellipse%20cx%3D%27200%27%20cy%3D%27175%27%20rx%3D%2795%27%20ry%3D%2716%27%20fill%3D%27%233d2a20%27/%3E%3Cpath%20d%3D%27M140%2090h120v55a45%2045%200%200%201-45%2045h-30a45%2045%200%200%201-45-45z%27%20fill%3D%27%23F3E9DF%27/%3E%3Cpath%20d%3D%27M260%20105h18a20%2020%200%200%201%200%2040h-18%27%20fill%3D%27none%27%20stroke%3D%27%23F3E9DF%27%20stroke-width%3D%2710%27/%3E%3Cpath%20d%3D%27M180%2070c-10-15%2010-25%200-40M210%2070c-10-15%2010-25%200-40%27%20stroke%3D%27%23D9B48A%27%20stroke-width%3D%275%27%20fill%3D%27none%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="cafe2"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%233a2a22%27/%3E%3Ccircle%20cx%3D%27200%27%20cy%3D%27112%27%20r%3D%2760%27%20fill%3D%27%23F3E9DF%27/%3E%3Ccircle%20cx%3D%27200%27%20cy%3D%27112%27%20r%3D%2740%27%20fill%3D%27%236b4632%27/%3E%3Ccircle%20cx%3D%27120%27%20cy%3D%2770%27%20r%3D%2716%27%20fill%3D%27%23E0247A%27/%3E%3Ccircle%20cx%3D%27290%27%20cy%3D%27160%27%20r%3D%2712%27%20fill%3D%27%23F7C600%27/%3E%3C/svg%3E") center/cover}
+.ph.noimg[data-k="harbor"]{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20225%27%20preserveAspectRatio%3D%27xMidYMid%20slice%27%3E%3Crect%20width%3D%27400%27%20height%3D%27225%27%20fill%3D%27%23CFE9F5%27/%3E%3Crect%20y%3D%27140%27%20width%3D%27400%27%20height%3D%2785%27%20fill%3D%27%23009FD4%27/%3E%3Crect%20x%3D%2740%27%20y%3D%2770%27%20width%3D%2760%27%20height%3D%2770%27%20fill%3D%27%23fff%27/%3E%3Crect%20x%3D%27110%27%20y%3D%2750%27%20width%3D%2750%27%20height%3D%2790%27%20fill%3D%27%23F2F4F6%27/%3E%3Crect%20x%3D%27170%27%20y%3D%2780%27%20width%3D%2780%27%20height%3D%2760%27%20fill%3D%27%23fff%27/%3E%3Crect%20x%3D%27260%27%20y%3D%2760%27%20width%3D%2755%27%20height%3D%2780%27%20fill%3D%27%23F2F4F6%27/%3E%3Cpath%20d%3D%27M90%20160h80l-10%2014h-60z%27%20fill%3D%27%23fff%27/%3E%3Cpath%20d%3D%27M130%20120v40l25-6z%27%20fill%3D%27%23E0247A%27/%3E%3Cpath%20d%3D%27M250%20165h60l-8%2010h-44z%27%20fill%3D%27%23fff%27/%3E%3C/svg%3E") center/cover}
 </style>
 </head>
 <body>
@@ -389,7 +397,7 @@ textarea{min-height:110px;resize:vertical}
           </div>
         </div>
       </div>
-      <div class="ph hero-img"><img src="https://hellodito.com/imgz/Bg-img1878x576.jpg" alt="Hello Dito, imprimerie à Monaco" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'ouverture du site actuel</span></div>
+      <div class="ph hero-img" data-k="press"><img src="https://images.unsplash.com/photo-1758183961426-88d64eb5f787?fm=jpg&amp;q=70&amp;w=1800&amp;auto=format&amp;fit=crop" alt="Hello Dito, imprimerie à Monaco" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
     </div>
   </section>
 
@@ -401,35 +409,35 @@ textarea{min-height:110px;resize:vertical}
       </div>
       <div class="services">
         <a class="svc feature" href="#grand-format">
-          <div class="ph "><img src="https://hellodito.com/imgz/gf_20b.jpg" alt="Grand format Monaco : affiches, bâches, roll-up, stands" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo Grand format</span></div>
+          <div class="ph " data-k="banner"><img src="https://images.unsplash.com/photo-1693031630369-bd429a57f115?fm=jpg&amp;q=70&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Grand format Monaco : affiches, bâches, roll-up, stands" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
           <h3>Grand format</h3>
           <p>Affiches, posters, panneaux et akylux, bâches, roll-up, stickers de toutes tailles, découpe de lettres, impression de plans. On crée et on installe aussi vos stands.</p>
           <ul><li>Roll-up</li><li>Bâches</li><li>Akylux</li><li>Stands</li><li>Lettres & logo 3D</li></ul>
           <span class="who"><span class="av" style="background:var(--m)"></span>David-Alexandre · English spoken</span>
         </a>
         <a class="svc" href="#accueil" data-goto="services">
-          <div class="ph "><img src="https://hellodito.com/imgz/print_20b.jpg" alt="Imprimerie Monaco : flyers, brochures, cartes de visite" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo Print</span></div>
+          <div class="ph " data-k="cards"><img src="https://images.unsplash.com/photo-1718670013921-2f144aba173a?fm=jpg&amp;q=70&amp;w=900&amp;auto=format&amp;fit=crop" alt="Imprimerie Monaco : flyers, brochures, cartes de visite" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
           <h3>Print</h3>
           <p>Tous les supports de la vie d'une entreprise, y compris une gamme éco-responsable.</p>
           <ul><li>Cartes de visite</li><li>Flyers</li><li>Brochures</li><li>Papeterie</li><li>Tampons</li><li>Faire-parts</li><li>Magnets</li></ul>
           <span class="who"><span class="av" style="background:var(--c)"></span>Denis · imprimerie</span>
         </a>
         <a class="svc" href="#accueil" data-goto="services">
-          <div class="ph "><img src="https://hellodito.com/imgz/crea_10b.jpg" alt="Studio de création graphique Hello Dito" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo Créa</span></div>
+          <div class="ph " data-k="design"><img src="https://images.unsplash.com/photo-1658863025658-4a259cc68fc9?fm=jpg&amp;q=70&amp;w=900&amp;auto=format&amp;fit=crop" alt="Studio de création graphique Hello Dito" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
           <h3>Créa</h3>
           <p>De la recherche d'images au fichier prêt à imprimer.</p>
           <ul><li>Charte graphique</li><li>Croquis</li><li>Mise en page</li><li>Photomontage</li><li>3D</li></ul>
           <span class="who"><span class="av" style="background:var(--ink)"></span>Le studio</span>
         </a>
         <a class="svc" href="#accueil" data-goto="services">
-          <div class="ph "><img src="https://hellodito.com/imgz/obp_10.jpg" alt="Objets publicitaires personnalisés à Monaco" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo Objet pub'</span></div>
+          <div class="ph " data-k="merch"><img src="https://images.unsplash.com/photo-1791273750136-80987cb89d4a?fm=jpg&amp;q=70&amp;w=900&amp;auto=format&amp;fit=crop" alt="Objets publicitaires personnalisés à Monaco" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
           <h3>Objet pub'</h3>
           <p>Votre message sur des objets créatifs et originaux. Délais rapides, petites quantités acceptées.</p>
           <ul><li>Boutique en ligne</li><li>Petites séries</li></ul>
           <span class="who"><span class="av" style="background:var(--m)"></span>David-Alexandre · 93 10 11 66</span>
         </a>
         <a class="svc" href="#accueil" data-goto="cafe">
-          <div class="ph "><img src="https://hellodito.com/imgz/img_cafe_30.jpg" alt="Le café dans l'imprimerie Hello Dito" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo du café</span></div>
+          <div class="ph " data-k="cafe"><img src="https://images.unsplash.com/photo-1628324193580-47c0d6be6694?fm=jpg&amp;q=70&amp;w=900&amp;auto=format&amp;fit=crop" alt="Le café dans l'imprimerie Hello Dito" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
           <h3>Internet café</h3>
           <p>Le café dans l'imprimerie : un illy, un lunch fait maison, et vos fichiers imprimés en attendant.</p>
           <ul><li>Wifi</li><li>Air printer</li><li>Ordinateurs en libre-service</li></ul>
@@ -442,12 +450,14 @@ textarea{min-height:110px;resize:vertical}
   <section class="block" id="cafe" style="padding-top:0">
     <div class="wrap duo">
       <div class="duo-card print">
+        <div class="ph" data-k="harbor" style="aspect-ratio:16/9"><img src="https://images.unsplash.com/photo-1691315755851-7307bcb5e892?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Port de Fontvieille" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
         <span class="mono" style="color:var(--m)">Ce qui nous rend différents</span>
         <h2>L'imprimerie où l'on vous sert un café.</h2>
         <p style="color:var(--ink-2)">Vous venez valider un BAT, on en parle autour d'un espresso. Vous attendez un tirage, vous déjeunez sur place. C'est l'esprit Hello Dito depuis le début.</p>
         <div class="route"><span class="av" style="background:var(--c)">✓</span><span><b>Imprim'Vert</b> · atelier certifié, et un catalogue de supports éco-responsables.</span></div>
       </div>
       <div class="duo-card cafe">
+        <div class="ph" data-k="cafe2" style="aspect-ratio:16/9"><img src="https://images.unsplash.com/photo-1744566917590-d6cfc841e369?fm=jpg&amp;q=70&amp;w=900&amp;auto=format&amp;fit=crop" alt="Café et fleurs sur une table en marbre" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
         <span class="mono">Internet café · Le Coronado</span>
         <p class="tagline">good coffee<br>good people<br>good waves</p>
         <ul><li>Café illy</li><li>Healthy lunch fait maison</li><li>Wifi</li><li>Air printer</li><li>Ordinateurs en libre-service</li></ul>
@@ -478,14 +488,14 @@ textarea{min-height:110px;resize:vertical}
     <div class="wrap">
       <div class="head">
         <div><span class="mono">L'équipe</span><h2>Vous savez à qui vous parlez.</h2></div>
-        <p class="lede">Chaque demande arrive directement chez la bonne personne.</p>
+        <p class="lede">Chaque demande arrive directement chez la bonne personne. Portraits de l'équipe à photographier.</p>
       </div>
       <div class="team">
         <div class="member"><div class="ph"><span class="ini">AV</span></div><b>Anne-Valérie</b><span>Fondatrice</span></div>
-        <div class="member"><div class="ph"><span class="ini">DA</span><img src="https://hellodito.com/imgz/dev_10.jpg" alt="" loading="lazy" onerror="this.remove()"></div><b>David-Alexandre</b><span>Grand format & objet pub'. English spoken.</span><span class="line">+377 93 10 11 66</span></div>
+        <div class="member"><div class="ph"><span class="ini">DA</span></div><b>David-Alexandre</b><span>Grand format & objet pub'. English spoken.</span><span class="line">+377 93 10 11 66</span></div>
         <div class="member"><div class="ph"><span class="ini">D</span></div><b>Denis</b><span>Imprimerie et print</span></div>
-        <div class="member"><div class="ph"><span class="ini">J</span><img src="https://hellodito.com/imgz/jenny2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><b>Jenny</b><span>Chargée de clientèle boutique</span></div>
-        <div class="member"><div class="ph"><span class="ini">C</span><img src="https://hellodito.com/imgz/chantal.jpg" alt="" loading="lazy" onerror="this.remove()"></div><b>Chantal</b><span>Le café</span><span class="line">+377 93 10 11 67</span></div>
+        <div class="member"><div class="ph"><span class="ini">J</span></div><b>Jenny</b><span>Chargée de clientèle boutique</span></div>
+        <div class="member"><div class="ph"><span class="ini">C</span></div><b>Chantal</b><span>Le café</span><span class="line">+377 93 10 11 67</span></div>
       </div>
     </div>
   </section>
@@ -522,7 +532,7 @@ textarea{min-height:110px;resize:vertical}
         </div>
       </div>
       <div style="display:grid;gap:14px">
-        <div class="ph gf-photo"><img src="https://hellodito.com/imgz/gf_20b.jpg" alt="Grand format Monaco : affiches, posters, panneaux, bâches, roll-up, stands" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo Grand format</span></div>
+        <div class="ph gf-photo" data-k="banner"><img src="https://images.unsplash.com/photo-1770017863955-56a1501a3c93?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Grand format Monaco : affiches, posters, panneaux, bâches, roll-up, stands" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="cap">Photo d'illustration</span></div>
         <div class="route"><span class="av" style="background:var(--m)">DA</span><span>Votre interlocuteur : <b>David-Alexandre</b>, spécialiste grand format. English spoken.</span></div>
       </div>
     </section>
