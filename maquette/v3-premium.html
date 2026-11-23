@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imprimerie à Monaco | Hello Dito, Fontvieille</title>
+<meta name="description" content="Imprimerie, studio de création et café au Coronado à Fontvieille, Monaco, depuis 30 ans : print, grand format, objets publicitaires. Certifié Imprim'Vert.">
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="fr" href="https://hellodito.com/">
+<link rel="alternate" hreflang="en" href="https://hellodito.com/en/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hello Dito","description":"Imprimerie, studio de création et café à Monaco.","telephone":"+377 93 10 11 60","address":{"@type":"PostalAddress","streetAddress":"Le Coronado, 20 avenue de Fontvieille","postalCode":"98000","addressLocality":"Monaco","addressCountry":"MC"},"openingHours":"Mo-Fr 09:00-18:00","founder":{"@type":"Person","name":"Anne-Valérie Dray"},"url":"https://hellodito.com/","sameAs":["https://www.instagram.com/dito_monaco/"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: quiet luxury editorial. Full-bleed photography, a single serif voice, generous air, one ink accent used like a signature. */
+:root{
+  --bg:#F7F7F5;
+  --surface:#FFFFFF;
+  --ink:#101217;
+  --ink-2:#5C616B;
+  --line:#E3E4E1;
+  --night:#0C0E12;
+  --accent:#C8195F;
+  --serif:"Instrument Serif", "Times New Roman", Georgia, serif;
+  --sans:"Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gl:max(20px, env(safe-area-inset-left, 0px));
+  --gr:max(20px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0;text-wrap:balance}
+h1{font-size:clamp(3.2rem,8.5vw,7.6rem)}
+h2{font-size:clamp(2.4rem,5vw,4.2rem)}
+h3{font-size:clamp(1.7rem,2.6vw,2.2rem)}
+em{font-style:italic}
+p{margin:0}
+.eyebrow{font:500 .74rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.lede{font-size:1.12rem;color:var(--ink-2);max-width:54ch;font-weight:300}
+.link{display:inline-flex;gap:10px;align-items:center;font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.link:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:12px;font:500 .95rem var(--sans);letter-spacing:.02em;text-decoration:none;border:0;cursor:pointer;padding:16px 28px;border-radius:999px;background:var(--ink);color:#fff;transition:background .2s}
+.btn:hover{background:var(--accent)}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--accent);color:#fff}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.line:hover{background:var(--ink);color:#fff;box-shadow:none}
+
+/* photo frames: real photo if it loads, otherwise a tonal plate */
+.ph{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 20% 10%, #3a3f4a 0%, transparent 60%),
+  linear-gradient(160deg,#1d2028,#0c0e12);}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.ph.noimg::after{content:attr(data-alt);position:absolute;left:20px;bottom:18px;right:20px;font:400 .78rem/1.4 var(--sans);letter-spacing:.06em;color:#ffffff80;text-transform:uppercase}
+.hero .ph.noimg::after{display:none}
+a:hover .ph img{transform:scale(1.03)}
+
+/* demo bar */
+.demo{background:var(--night);color:#ffffffb0;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.demo .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:9px;align-items:center}
+.demo nav{display:flex;gap:16px}
+.demo a{text-decoration:none}
+.demo a[aria-current="page"]{color:#fff;border-bottom:1px solid #fff}
+
+/* header */
+header.site{position:absolute;left:0;right:0;z-index:30;color:#fff}
+header.site.solid{position:relative;color:var(--ink);border-bottom:1px solid var(--line);background:var(--bg)}
+header.site .wrap{display:flex;align-items:center;gap:36px;padding-block:24px}
+.brand{font-family:var(--serif);font-size:1.9rem;line-height:1;text-decoration:none;letter-spacing:-.01em}
+.brand i{color:var(--accent);font-style:normal}
+nav.main{display:flex;gap:30px;margin-left:auto;font-size:.92rem}
+nav.main a{text-decoration:none;opacity:.88}
+nav.main a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.lang{font-size:.78rem;letter-spacing:.1em;opacity:.8}
+header .btn{padding:11px 20px;font-size:.88rem}
+header:not(.solid) .btn{background:#fff;color:var(--ink)}
+header:not(.solid) .btn:hover{background:var(--accent);color:#fff}
+.burger{display:none;background:none;border:1px solid currentColor;color:inherit;border-radius:999px;padding:9px 16px;font:500 .85rem var(--sans);cursor:pointer}
+@media (max-width:960px){nav.main,.lang,header .btn{display:none}.burger{display:inline-block;margin-left:auto}}
+.mnav{background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line)}
+.mnav .wrap{display:grid;padding-block:8px 18px}
+.mnav a{text-decoration:none;font-family:var(--serif);font-size:1.6rem;padding:8px 0;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;min-height:clamp(560px,92vh,880px);display:flex;align-items:flex-end;color:#fff}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#0c0e1299 0%,#0c0e1222 35%,#0c0e12cc 100%)}
+.hero .inner{position:relative;z-index:2;width:100%;padding-block:140px clamp(40px,6vw,72px)}
+.hero h1 em{color:#fff}
+.hero-row{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin-top:28px}
+.hero-row > *{min-width:0}
+.hero .lede{color:#ffffffd0}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:22px;border-top:1px solid #ffffff38;font-size:.86rem;color:#ffffffc0}
+.hero .meta b{color:#fff;font-weight:500}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:flex-end}
+@media (max-width:820px){.hero-row{grid-template-columns:1fr}.hero .actions{justify-content:flex-start}}
+
+section{padding-block:clamp(72px,10vw,144px)}
+
+/* manifesto */
+.manifesto{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,6vw,96px)}
+.manifesto > *{min-width:0}
+.quote{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3.3rem);line-height:1.12;letter-spacing:-.01em}
+.quote em{color:var(--accent)}
+.sign{display:flex;gap:14px;align-items:center;margin-top:36px;font-size:.92rem;color:var(--ink-2)}
+.sign b{color:var(--ink);font-weight:500}
+.sign .rule{width:40px;height:1px;background:var(--ink)}
+.facts{display:grid;gap:0;border-top:1px solid var(--ink);align-self:start}
+.facts div{display:flex;justify-content:space-between;gap:18px;padding-block:16px;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts span{color:var(--ink-2)}
+@media (max-width:820px){.manifesto{grid-template-columns:1fr}.manifesto .facts{order:2}}
+
+/* services: alternating editorial spreads */
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,80px)}
+.spread{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,80px);align-items:center;text-decoration:none;padding-block:clamp(28px,4vw,48px);border-top:1px solid var(--line)}
+.spread > *{min-width:0}
+.spread:nth-of-type(even){grid-template-columns:1fr 1.25fr}
+.spread:nth-of-type(even) .ph{order:2}
+.spread .ph{aspect-ratio:4/3;border-radius:2px}
+.spread .txt{display:grid;gap:18px;align-content:center}
+.spread p{color:var(--ink-2);font-weight:300;max-width:46ch}
+.tags{font-size:.88rem;color:var(--ink-2);line-height:1.9}
+.tags span + span::before{content:"·";margin:0 10px;color:var(--line)}
+.contact{display:flex;align-items:center;gap:12px;font-size:.88rem;color:var(--ink-2)}
+.contact b{color:var(--ink);font-weight:500}
+@media (max-width:820px){.spread,.spread:nth-of-type(even){grid-template-columns:1fr}.spread:nth-of-type(even) .ph{order:0}}
+
+/* café: full-bleed night band */
+.cafe{position:relative;color:#fff;padding:0;background:var(--night)}
+.cafe-grid{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.cafe-grid > *{min-width:0}
+.cafe .ph{min-height:420px}
+.cafe .txt{padding:clamp(48px,7vw,110px) var(--gr) clamp(48px,7vw,110px) clamp(32px,6vw,96px);display:grid;gap:26px;align-content:center}
+.cafe .eyebrow{color:#ffffff90}
+.cafe .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#ffffffd8;line-height:1.2}
+.cafe ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;font-size:.95rem;color:#ffffffc8}
+.cafe li{border-top:1px solid #ffffff2a;padding-top:10px}
+.cafe .book{font-size:.95rem;color:#ffffffb0}
+.cafe .book b{color:#fff;font-weight:500;user-select:all}
+@media (max-width:900px){.cafe-grid{grid-template-columns:1fr}.cafe .txt{padding-left:var(--gl)}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,28px);margin-top:56px}
+.member{display:grid;gap:12px;min-width:0}
+.member .ph{aspect-ratio:3/4;background:linear-gradient(170deg,#E9EAE6,#D9DAD5)}
+.member .ph .ini{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:3.4rem;color:#10121726}
+.member b{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.1}
+.member span{font-size:.88rem;color:var(--ink-2);line-height:1.45}
+.member .tel{color:var(--ink);font-variant-numeric:tabular-nums;user-select:all}
+@media (max-width:980px){.team{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.team{grid-template-columns:1fr 1fr}}
+
+/* catalogues */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);margin-top:48px}
+.cat{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none;min-width:0}
+.cats .cat:not(:nth-child(3n)){padding-right:28px}
+.cats .cat:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--line)}
+.cat b{font-family:var(--serif);font-weight:400;font-size:1.45rem;line-height:1.15}
+.cat span{display:block;font-size:.85rem;color:var(--ink-2);margin-top:4px}
+.cat .arr{font-size:1.2rem;transition:transform .2s}
+.cat:hover .arr{transform:translateX(4px);color:var(--accent)}
+@media (max-width:860px){.cats{grid-template-columns:1fr}.cats .cat{padding-left:0!important;padding-right:0!important;border-left:0!important}}
+
+/* location */
+.place{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.place > *{min-width:0}
+.place .ph{aspect-ratio:5/4}
+.place .facts{margin-top:28px}
+@media (max-width:820px){.place{grid-template-columns:1fr}}
+
+/* faq */
+.faq{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-family:var(--serif);font-size:1.5rem;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:1.6rem;line-height:1;color:var(--ink-2)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--ink-2);padding-bottom:24px;max-width:64ch;font-weight:300}
+.two{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(28px,6vw,96px);align-items:start}
+.two > *{min-width:0}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+
+/* closing */
+.closing{background:var(--surface);border-top:1px solid var(--line);text-align:left}
+.closing .wrap{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.closing h2{max-width:14ch}
+.closing h2 em{color:var(--accent)}
+
+footer{background:var(--night);color:#ffffffa8;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-block:72px 32px}
+footer .wrap > *{min-width:0}
+footer .brand{color:#fff;display:inline-block;margin-bottom:14px}
+footer h4{font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin:0 0 16px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer .legal{grid-column:1/-1;border-top:1px solid #ffffff1c;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem}
+@media (max-width:820px){footer .wrap{grid-template-columns:1fr 1fr}}
+
+/* inner pages */
+.page-top{padding-block:56px 0}
+.crumbs{font-size:.8rem;color:var(--ink-2);letter-spacing:.04em;display:flex;gap:10px;margin-bottom:40px}
+.crumbs a{text-decoration:none}
+.page-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:end}
+.page-hero > *{min-width:0}
+.page-hero h1{font-size:clamp(3rem,6.6vw,5.8rem)}
+.page-hero .lede{margin-top:24px}
+.page-hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}
+.wide{margin-top:clamp(40px,6vw,72px);aspect-ratio:21/9}
+@media (max-width:820px){.page-hero{grid-template-columns:1fr}.wide{aspect-ratio:4/3}}
+.range{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink)}
+.range div{padding:26px 28px 26px 0;border-bottom:1px solid var(--line);display:grid;gap:6px;min-width:0}
+.range div:nth-child(even){padding-left:28px;border-left:1px solid var(--line)}
+.range b{font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1.1}
+.range span{color:var(--ink-2);font-size:.95rem;font-weight:300}
+@media (max-width:700px){.range{grid-template-columns:1fr}.range div:nth-child(even){padding-left:0;border-left:0}}
+.person{display:flex;gap:16px;align-items:center;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.person .av{width:56px;height:56px;border-radius:50%;background:linear-gradient(170deg,#E9EAE6,#D3D4CF);display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;color:#10121760;flex:none}
+.person b{font-family:var(--serif);font-weight:400;font-size:1.35rem;display:block;line-height:1.1}
+.person span{font-size:.9rem;color:var(--ink-2)}
+
+/* form */
+.formgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,6vw,96px);align-items:start;padding-block:56px 120px}
+.formgrid > *{min-width:0}
+form.quote{display:grid;gap:36px}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:20px}
+legend{font-family:var(--serif);font-size:1.8rem;margin-bottom:8px;padding:0}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f2 > *{min-width:0}
+@media (max-width:640px){.f2{grid-template-columns:1fr}}
+label{display:grid;gap:8px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+input,select,textarea{font:400 1.05rem var(--sans);letter-spacing:0;text-transform:none;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #10121740;padding:10px 0;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--ink)}
+textarea{min-height:90px;resize:vertical}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills label{display:inline-flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:10px 18px;cursor:pointer;background:var(--surface)}
+.pills input{width:auto;accent-color:var(--ink)}
+.pills label:has(input:checked){border-color:var(--ink);background:var(--ink);color:#fff}
+.route{min-height:56px}
+.err{color:#A3123F;font-size:.9rem}
+.note{font-size:.82rem;color:var(--ink-2)}
+.done{display:grid;gap:16px;padding:40px;background:var(--surface);border:1px solid var(--line)}
+.side{display:grid;gap:28px;position:sticky;top:32px}
+.side .facts{margin-top:0}
+.side p{color:var(--ink-2);font-weight:300}
+@media (max-width:900px){.formgrid{grid-template-columns:1fr}.side{position:static}}
+</style>
+</head>
+<body>
+
+<div class="demo"><div class="wrap">
+  <span>Maquette de refonte · proposition non officielle</span>
+  <nav aria-label="Pages de la maquette"><a href="#accueil" data-view="accueil">Accueil</a><a href="#grand-format" data-view="grand-format">Grand format</a><a href="#devis" data-view="devis">Devis</a></nav>
+</div></div>
+
+<header class="site" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#accueil">Hello Dito<i>.</i></a>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="#accueil" data-goto="metiers">Print</a>
+      <a href="#grand-format">Grand format</a>
+      <a href="#accueil" data-goto="metiers">Créa</a>
+      <a href="#accueil" data-goto="metiers">Objet pub'</a>
+      <a href="#accueil" data-goto="cafe">Le café</a>
+      <a href="#accueil" data-goto="equipe">L'équipe</a>
+    </nav>
+    <span class="lang">FR / EN</span>
+    <a class="btn" href="#devis">Demander un devis</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav">Menu</button>
+  </div>
+  <div class="mnav" id="mnav" hidden><div class="wrap">
+    <a href="#accueil" data-goto="metiers">Nos métiers</a>
+    <a href="#grand-format">Grand format</a>
+    <a href="#accueil" data-goto="cafe">Le café</a>
+    <a href="#accueil" data-goto="equipe">L'équipe</a>
+    <a href="#devis">Demander un devis</a>
+  </div></div>
+</header>
+
+<main>
+<!-- ================= ACCUEIL ================= -->
+<div data-page="accueil">
+  <section class="hero" style="padding:0">
+    <div class="ph" data-alt="Photo d'illustration · Presse d'impression aux rouleaux encrés"><img src="https://images.unsplash.com/photo-1758183961426-88d64eb5f787?fm=jpg&amp;q=75&amp;w=2000&amp;auto=format&amp;fit=crop" alt="Presse d'impression aux rouleaux encrés" loading="eager" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+    <div class="inner"><div class="wrap">
+      <p class="eyebrow" style="color:#ffffffb0">Imprimerie · Fontvieille, Monaco · depuis 30 ans</p>
+      <div class="hero-row">
+        <h1>L'imprimerie<br>de <em>Fontvieille.</em></h1>
+        <div class="actions">
+          <a class="btn light" href="#devis">Demander un devis</a>
+          <a class="btn line" href="#accueil" data-goto="metiers">Nos métiers</a>
+        </div>
+      </div>
+      <div class="meta">
+        <span><b>Print</b> & papeterie</span><span><b>Grand format</b> & stands</span><span><b>Studio</b> de création</span><span><b>Objets</b> publicitaires</span><span><b>Café</b> dans l'atelier</span>
+      </div>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="wrap manifesto">
+      <div>
+        <p class="eyebrow">Hello!</p>
+        <div class="facts" style="margin-top:28px">
+          <div><span>Adresse</span><b>Le Coronado, Fontvieille</b></div>
+          <div><span>Depuis</span><b>30 ans</b></div>
+          <div><span>Label</span><b>Imprim'Vert</b></div>
+          <div><span>Langues</span><b>Français, English</b></div>
+        </div>
+      </div>
+      <div>
+        <p class="quote">Une entreprise dynamique et créative au cœur du quartier des affaires de Monaco. On travaille ensemble, on mange ensemble, on échange parfois vivement. <em>Nous sommes sûrement comme vous. Ni plus ni moins.</em></p>
+        <div class="sign"><span class="rule"></span><span><b>Anne-Valérie Dray</b>, fondatrice</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metiers" style="padding-top:0">
+    <div class="wrap">
+      <div class="svc-head">
+        <div><p class="eyebrow">Nos métiers</p><h2 style="margin-top:18px">Du croquis à l'objet,<br><em>sous un même toit.</em></h2></div>
+        <p class="lede">Quatre savoir-faire, un seul interlocuteur par projet.</p>
+      </div>
+
+      <a class="spread" href="#grand-format">
+        <div class="ph" data-alt="Photo d'illustration · Impression grand format d'une bâche"><img src="https://images.unsplash.com/photo-1693031630369-bd429a57f115?fm=jpg&amp;q=75&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Impression grand format d'une bâche" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+        <div class="txt">
+          <p class="eyebrow">Grand format</p>
+          <h3>Affiches, bâches, roll-up et stands, <em>créés et installés.</em></h3>
+          <p>Pour vos salons, vos vitrines et vos événements en Principauté. Panneaux akylux, stickers de toutes tailles, lettres découpées, logos en relief et impression de plans.</p>
+          <p class="tags"><span>Roll-up</span><span>Bâches</span><span>Akylux</span><span>Stands</span><span>Lettres 3D</span></p>
+          <p class="contact"><span>Avec <b>David-Alexandre</b> · English spoken</span></p>
+          <span class="link">Découvrir le grand format →</span>
+        </div>
+      </a>
+
+      <a class="spread" href="#accueil" data-goto="metiers">
+        <div class="ph" data-alt="Photo d'illustration · Cartes de visite sur un comptoir en marbre"><img src="https://images.unsplash.com/photo-1718670013921-2f144aba173a?fm=jpg&amp;q=75&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Cartes de visite sur un comptoir en marbre" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+        <div class="txt">
+          <p class="eyebrow">Print</p>
+          <h3>Tout ce qu'une entreprise <em>imprime au quotidien.</em></h3>
+          <p>Cartes de visite, en-têtes et papeterie, flyers, brochures, manuels, présentations, invitations et faire-part, tampons, magnets. Avec une gamme de supports éco-responsables.</p>
+          <p class="contact"><span>Avec <b>Denis</b>, à l'imprimerie</span></p>
+          <span class="link">Voir le print →</span>
+        </div>
+      </a>
+
+      <a class="spread" href="#accueil" data-goto="metiers">
+        <div class="ph" data-alt="Photo d'illustration · Livres de design et brochures"><img src="https://images.unsplash.com/photo-1658863025658-4a259cc68fc9?fm=jpg&amp;q=75&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Livres de design et brochures" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+        <div class="txt">
+          <p class="eyebrow">Créa</p>
+          <h3>Votre image, <em>pensée avant d'être imprimée.</em></h3>
+          <p>Recherche d'images, croquis, charte graphique, mise en page, photomontage et modélisation 3D. Le studio livre un fichier prêt à imprimer, et l'atelier l'imprime à côté.</p>
+          <span class="link">Voir le studio →</span>
+        </div>
+      </a>
+
+      <a class="spread" href="#accueil" data-goto="metiers">
+        <div class="ph" data-alt="Photo d'illustration · Objets publicitaires, textiles et tasses"><img src="https://images.unsplash.com/photo-1791273750136-80987cb89d4a?fm=jpg&amp;q=75&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Objets publicitaires, textiles et tasses" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+        <div class="txt">
+          <p class="eyebrow">Objet pub'</p>
+          <h3>Votre message sur des objets <em>qu'on garde.</em></h3>
+          <p>Des objets créatifs et originaux, en petites quantités et avec des délais rapides, à choisir aussi sur notre boutique en ligne.</p>
+          <p class="contact"><span>Avec <b>David-Alexandre</b> · +377 93 10 11 66</span></p>
+          <span class="link">Voir les objets →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="cafe" id="cafe">
+    <div class="cafe-grid">
+      <div class="ph" data-alt="Photo d'illustration · Machine à espresso"><img src="https://images.unsplash.com/photo-1628324193580-47c0d6be6694?fm=jpg&amp;q=75&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Machine à espresso" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+      <div class="txt">
+        <p class="eyebrow">Le café dans l'imprimerie</p>
+        <h2>On parle de votre projet <em>autour d'un espresso.</em></h2>
+        <p class="tag">good coffee, good people, good waves</p>
+        <ul><li>Café illy</li><li>Healthy lunch fait maison</li><li>Wifi et air printer</li><li>Ordinateurs en libre-service</li></ul>
+        <p class="book">Réservez votre table : <b>+377 93 10 11 67</b></p>
+        <div><a class="btn light" href="#accueil" data-goto="cafe">Voir le menu</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="wrap">
+      <div class="svc-head" style="margin-bottom:0">
+        <div><p class="eyebrow">L'équipe</p><h2 style="margin-top:18px">Vous savez <em>à qui vous parlez.</em></h2></div>
+        <p class="lede">Chaque demande arrive directement chez la bonne personne.</p>
+      </div>
+      <div class="team">
+        <div class="member"><div class="ph"><span class="ini">AV</span></div><b>Anne-Valérie</b><span>Fondatrice</span></div>
+        <div class="member"><div class="ph"><span class="ini">DA</span></div><b>David-Alexandre</b><span>Grand format et objet pub'. English spoken.</span><span class="tel">+377 93 10 11 66</span></div>
+        <div class="member"><div class="ph"><span class="ini">D</span></div><b>Denis</b><span>Imprimerie et print</span></div>
+        <div class="member"><div class="ph"><span class="ini">J</span></div><b>Jenny</b><span>Chargée de clientèle boutique</span></div>
+        <div class="member"><div class="ph"><span class="ini">C</span></div><b>Chantal</b><span>Le café</span><span class="tel">+377 93 10 11 67</span></div>
+      </div>
+      <p class="note" style="margin-top:18px">Portraits de l'équipe à photographier.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Catalogues</p>
+      <h2 style="margin-top:18px">Feuilletez <em>avant de venir.</em></h2>
+      <div class="cats">
+        <a class="cat" href="#accueil"><span><b>Supports de communication</b><span>Flyers, brochures, cartes de visite</span></span><span class="arr">→</span></a>
+        <a class="cat" href="#accueil"><span><b>Supports éco-responsables</b><span>Papiers et encres plus responsables</span></span><span class="arr">→</span></a>
+        <a class="cat" href="#grand-format"><span><b>Catalogue événementiel</b><span>Affiches, roll-up, stands, stickers</span></span><span class="arr">→</span></a>
+        <a class="cat" href="#grand-format"><span><b>Lettres & logo 3D</b><span>Enseignes et signalétique</span></span><span class="arr">→</span></a>
+        <a class="cat" href="#accueil"><span><b>Cartes de vœux</b><span>La collection de fin d'année</span></span><span class="arr">→</span></a>
+        <a class="cat" href="#accueil"><span><b>Les News du Print</b><span>Nouveautés et idées</span></span><span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap place">
+      <div class="ph" data-alt="Photo d'illustration · Le port de Fontvieille"><img src="https://images.unsplash.com/photo-1691315755851-7307bcb5e892?fm=jpg&amp;q=75&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Le port de Fontvieille" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div>
+      <div>
+        <p class="eyebrow">Nous trouver</p>
+        <h2 style="margin-top:18px">Au Coronado, <em>à deux pas du port.</em></h2>
+        <div class="facts">
+          <div><span>Adresse</span><b>20 avenue de Fontvieille</b></div>
+          <div><span>Ville</span><b>98000 Monaco</b></div>
+          <div><span>Horaires</span><b>Lundi au vendredi, 9h–18h</b></div>
+          <div><span>Accueil</span><b style="user-select:all">+377 93 10 11 60</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap two">
+      <div><p class="eyebrow">Questions fréquentes</p><h2 style="margin-top:18px">Avant de <em>commander.</em></h2></div>
+      <div class="faq">
+        <details open><summary>Quel fichier dois-je envoyer ?</summary><p>Un PDF haute définition en CMJN avec 3 mm de fonds perdus est idéal. Sinon, envoyez ce que vous avez : le studio s'occupe du reste.</p></details>
+        <details><summary>Faites-vous des petites quantités ?</summary><p>Oui, notamment pour les objets publicitaires, avec des délais rapides.</p></details>
+        <details><summary>Installez-vous les stands ?</summary><p>Oui. L'équipe grand format crée et installe vos stands pour les salons et événements.</p></details>
+        <details><summary>Do you speak English?</summary><p>Yes. David-Alexandre handles large format and promotional items in English.</p></details>
+        <details><summary>Peut-on déjeuner sur place ?</summary><p>Oui, le café sert un healthy lunch fait maison et du café illy. Réservation au +377 93 10 11 67.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= GRAND FORMAT ================= -->
+<div data-page="grand-format" hidden>
+  <div class="wrap page-top">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="#accueil">Accueil</a><span>/</span><span>Grand format</span></nav>
+    <div class="page-hero">
+      <h1>Impression grand format <em>à Monaco.</em></h1>
+      <div>
+        <p class="lede">Affiches, bâches, roll-up, panneaux akylux, stickers, lettres découpées et stands. Imprimés à Fontvieille, créés et installés par notre équipe.</p>
+        <div class="actions"><a class="btn" href="#devis" data-product="Grand format">Demander un devis</a><span style="font-size:.95rem;user-select:all">+377 93 10 11 66</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><div class="ph wide" data-alt="Photo d'illustration · Imprimante grand format avec visuel"><img src="https://images.unsplash.com/photo-1770017863955-56a1501a3c93?fm=jpg&amp;q=75&amp;w=2000&amp;auto=format&amp;fit=crop" alt="Imprimante grand format avec visuel" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"></div></div>
+
+  <section>
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">La gamme</p>
+        <h2 style="margin-top:18px">Ce qu'on imprime <em>en grand.</em></h2>
+        <div class="person" style="margin-top:40px"><span class="av">DA</span><span><b>David-Alexandre</b><span>Spécialiste grand format · English spoken</span></span></div>
+      </div>
+      <div class="range">
+        <div><b>Affiches et posters</b><span>Vitrines, événements, affichage</span></div>
+        <div><b>Panneaux et akylux</b><span>Signalétique, chantiers, salons</span></div>
+        <div><b>Bâches</b><span>Façades, barrières, extérieur</span></div>
+        <div><b>Roll-up</b><span>Accueil, salons, conférences</span></div>
+        <div><b>Stands</b><span>Créés et installés par l'équipe</span></div>
+        <div><b>Stickers</b><span>Toutes tailles, vitrines, véhicules</span></div>
+        <div><b>Lettres & logo 3D</b><span>Enseignes et accueil</span></div>
+        <div><b>Plans</b><span>Architectes, promoteurs, chantiers</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap two">
+      <div><p class="eyebrow">Conseils</p><h2 style="margin-top:18px">Préparer <em>son fichier.</em></h2></div>
+      <div class="faq">
+        <details open><summary>Quelle résolution pour un roll-up ?</summary><p>Un fichier à l'échelle 1:10 en 150 dpi suffit souvent, car le visuel est vu de loin. Gardez les textes importants à distance des bords et laissez libre le bas du roll-up, caché par le pied.</p></details>
+        <details><summary>Je n'ai pas de visuel.</summary><p>Le studio Créa le prépare aux bonnes dimensions, puis vous envoie un BAT à valider.</p></details>
+        <details><summary>Pouvez-vous installer sur place ?</summary><p>Oui pour les stands, que l'équipe crée et installe. Pour les autres supports, demandez-le dans votre devis.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= DEVIS ================= -->
+<div data-page="devis" hidden>
+  <div class="wrap page-top">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="#accueil">Accueil</a><span>/</span><span>Devis</span></nav>
+    <h1 style="font-size:clamp(3rem,6.6vw,5.8rem);max-width:12ch">Parlez-nous de <em>votre projet.</em></h1>
+    <p class="lede" style="margin-top:24px">Devis gratuit. Votre demande arrive directement chez la personne qui s'occupe de ce métier.</p>
+  </div>
+  <div class="wrap formgrid">
+    <div>
+      <form class="quote" id="quote" novalidate>
+        <fieldset>
+          <legend>Le projet</legend>
+          <label for="product">Métier
+            <select id="product" name="product"><option>Print</option><option>Grand format</option><option>Créa</option><option>Objet pub'</option></select>
+          </label>
+          <div class="person route" id="route" aria-live="polite"></div>
+          <div class="f2">
+            <label for="qty">Quantité<input id="qty" name="qty" type="number" min="1" value="500" inputmode="numeric"></label>
+            <label for="date">Pour quand ?<input id="date" name="date" type="date"></label>
+          </div>
+          <div class="pills" role="radiogroup" aria-label="Votre fichier">
+            <label><input type="radio" name="file" id="file-ready" value="prêt" checked> Mon fichier est prêt</label>
+            <label><input type="radio" name="file" id="file-todo" value="à créer"> À créer par le studio</label>
+          </div>
+          <label for="upload">Joindre un fichier<input id="upload" name="upload" type="file"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Vos coordonnées</legend>
+          <p class="note">Exemple pré-rempli pour la démo.</p>
+          <div class="f2">
+            <label for="name">Nom<input id="name" name="name" autocomplete="name" value="Julie Martin"></label>
+            <label for="company">Société<input id="company" name="company" autocomplete="organization" value="Exemple SAM"></label>
+            <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" value="julie@exemple.mc"></label>
+            <label for="phone">Téléphone<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+377"></label>
+          </div>
+          <label for="msg">Votre projet<textarea id="msg" name="msg">Cartes de visite pour toute l'équipe, papier éco-responsable si possible.</textarea></label>
+        </fieldset>
+        <p class="err" id="err" hidden></p>
+        <div><button class="btn" type="submit">Envoyer ma demande</button></div>
+      </form>
+      <div class="done" id="done" hidden>
+        <p class="eyebrow">Demande prête</p>
+        <h3 id="done-title">Merci.</h3>
+        <p class="lede">Sur le vrai site, cette demande partirait vers la bonne personne de l'atelier. Ici, c'est une maquette : rien n'a été envoyé.</p>
+        <div><button class="btn line" type="button" id="again">Modifier la demande</button></div>
+      </div>
+    </div>
+    <aside class="side">
+      <div class="facts">
+        <div><span>Adresse</span><b>Le Coronado</b></div>
+        <div><span></span><b>20 av. de Fontvieille</b></div>
+        <div><span>Accueil</span><b style="user-select:all">+377 93 10 11 60</b></div>
+        <div><span>Horaires</span><b>Lun–ven, 9h–18h</b></div>
+      </div>
+      <p>Vous préférez passer ? Venez avec votre fichier, on le regarde ensemble autour d'un café.</p>
+    </aside>
+  </div>
+</div>
+</main>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Un projet à imprimer ? <em>Passez nous voir.</em></h2>
+    <a class="btn" href="#devis">Demander un devis</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="#accueil">Hello Dito<i>.</i></a><p>Imprimerie, studio de création, objets publicitaires et café. Au Coronado, à Fontvieille, depuis 30 ans.</p></div>
+    <div><h4>Métiers</h4><ul><li><a href="#accueil">Print</a></li><li><a href="#grand-format">Grand format</a></li><li><a href="#accueil">Créa</a></li><li><a href="#accueil">Objet pub'</a></li><li><a href="#accueil">Le café</a></li></ul></div>
+    <div><h4>Atelier</h4><ul><li>Le Coronado</li><li>20 av. de Fontvieille</li><li>98000 Monaco</li><li>+377 93 10 11 60</li></ul></div>
+    <div><h4>Suivre</h4><ul><li><a href="https://www.instagram.com/dito_monaco/" rel="noopener">Instagram</a></li><li>Facebook</li><li>Imprim'Vert</li></ul></div>
+    <div class="legal"><span>© Hello Dito · Maquette de refonte</span><span>Photos d'illustration Unsplash</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var META={
+    "accueil":["Imprimerie à Monaco | Hello Dito, Fontvieille","Imprimerie, studio de création et café au Coronado à Fontvieille, Monaco, depuis 30 ans."],
+    "grand-format":["Impression grand format à Monaco : bâches, roll-up, stands | Hello Dito","Affiches, bâches, roll-up, akylux, stickers, lettres 3D et stands créés et installés à Monaco. English spoken."],
+    "devis":["Devis d'impression gratuit à Monaco | Hello Dito","Demandez un devis d'impression : print, grand format, création, objets publicitaires."]
+  };
+  var pages=document.querySelectorAll("[data-page]"), desc=document.querySelector('meta[name="description"]');
+  var hdr=document.getElementById("hdr"), mnav=document.getElementById("mnav"), burger=document.getElementById("burger");
+  var pendingGoto=null;
+  function show(){
+    var v=(location.hash||"#accueil").slice(1); if(!META[v]) v="accueil";
+    pages.forEach(function(p){p.hidden=p.getAttribute("data-page")!==v;});
+    hdr.classList.toggle("solid", v!=="accueil");
+    document.querySelectorAll(".demo nav a").forEach(function(a){ if(a.getAttribute("data-view")===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+    document.title=META[v][0]; desc.setAttribute("content",META[v][1]);
+    var t=pendingGoto?document.getElementById(pendingGoto):null; pendingGoto=null;
+    if(t) t.scrollIntoView(); else window.scrollTo(0,0);
+    mnav.hidden=true; burger.setAttribute("aria-expanded","false");
+  }
+  burger.addEventListener("click",function(){mnav.hidden=!mnav.hidden;burger.setAttribute("aria-expanded",String(!mnav.hidden));});
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("a[href^='#']"); if(!a) return;
+    var g=a.getAttribute("data-goto"), prod=a.getAttribute("data-product");
+    if(prod){document.getElementById("product").value=prod; route();}
+    if(g){pendingGoto=g; if(location.hash===a.getAttribute("href")||(!location.hash&&a.getAttribute("href")==="#accueil")){e.preventDefault();show();}}
+  });
+  window.addEventListener("hashchange",show);
+  var ROUTE={"Print":["D","Denis","Imprimerie et print"],"Grand format":["DA","David-Alexandre","Spécialiste grand format · English spoken"],"Créa":["CR","Le studio","Création graphique"],"Objet pub'":["DA","David-Alexandre","Objets publicitaires · +377 93 10 11 66"]};
+  function route(){var r=ROUTE[document.getElementById("product").value];document.getElementById("route").innerHTML='<span class="av">'+r[0]+'</span><span><span>Votre demande arrive chez</span><b>'+r[1]+'</b><span>'+r[2]+'</span></span>';}
+  document.getElementById("product").addEventListener("change",route); route();
+  show();
+  var form=document.getElementById("quote"), done=document.getElementById("done"), err=document.getElementById("err");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var name=form.elements.name.value.trim(), email=form.elements.email.value.trim();
+    if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent="Indiquez votre nom et une adresse email valide pour qu'on puisse vous répondre.";err.hidden=false;return;}
+    err.hidden=true;
+    document.getElementById("done-title").textContent="Merci "+name.split(" ")[0]+".";
+    form.hidden=true; done.hidden=false;
+  });
+  document.getElementById("again").addEventListener("click",function(){done.hidden=true;form.hidden=false;});
+})();
+</script>
+</body>
+</html>
